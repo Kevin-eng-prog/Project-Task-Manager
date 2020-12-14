@@ -1,0 +1,19 @@
+
+{% extends 'project/base.html' %}
+
+{% block content %}
+<div>
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend >New Project</legend>
+            {{ form }} 
+            <div >
+                <br>
+                <button type="submit">Add project</button>
+            </div>
+        </fieldset>
+    </form>
+</div>
+{% endblock content %}
+   

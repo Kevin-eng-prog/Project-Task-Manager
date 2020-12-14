@@ -1,0 +1,19 @@
+{% extends 'project/base.html' %}
+
+
+{% block content %}
+    <h1>Home Page</h1>
+    {% for project in projects %}
+    <article class="media content-section">
+        <div class="media-body">
+          <div class="article-metadata">
+            <a class="mr-2" href="#">Time - {{ project.project_duration }} </a>
+          </div>
+          <h2><a class="article-title" href="{% url 'project-detail' project.id %}">{{ project.project_title }}</a></h2>
+          <p class="article-content">{{ project.project_description }}</p>
+        </div>
+      </article>
+    {% endfor %}
+{% endblock content %}
+    
+   

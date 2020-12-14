@@ -1,0 +1,40 @@
+
+{% extends 'project/base.html' %}
+
+
+{% block content %}
+
+    <article class="media content-section">
+        <div class="media-body">
+          <div class="article-metadata">
+            <a href="#">time - {{ object.project_duration }} days</a><br>
+            <a  href="{% url 'project-update' object.id %}">Update</a><br>
+            <a  href="{% url 'project-delete' object.id %}">Delete</a>
+          </div>
+          <h2 class="article-title">{{ object.project_title }}</h2>
+          <p class="article-content">{{ object.project_description }}</p>
+        </div>
+      </article>
+      <h2>Tasks</h2>
+
+
+        {% for task in tasks %}       
+            <article >
+              <div >
+                <div >
+                  <small class="mr-2" href="#">Start - {{ task.task_start }} <br> End  - {{ task.task_end }} </small>
+                </div>
+                <h2><a class="article-title" href="{% url 'task-detail' pk=task.id  %}">{{ task.task_name }}</a></h2>
+                <p class="article-content">{{ task.task_description }}</p>
+              </div>
+            </article>                 
+        {% endfor %}
+        <div class="media-body">
+         
+          <a href="{% url 'task-create' object.id %}">Tasks +</a>
+        </div>
+          
+      
+{% endblock content %}
+    
+   
