@@ -1,7 +1,7 @@
 # Project & Task Handler    
 A django webapp has been created to manage the list of Projects and Tasks for each Project. The web used the sqlite database to store all the information regarding Projects and Tasks and they are further managed using django ORM (Object-Relational Mapper). 
 
-<img src="asserts/view.gif" width="900" height="480" />
+<img src="asserts/view.png" width="900" height="480" />
 
 ## Description: 
 The following functionality are avaliable in a given web app- 
